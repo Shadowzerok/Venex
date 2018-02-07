@@ -1,235 +1,200 @@
-# [Alembic](https://alembic.darn.es/)
-[![Gem Version](https://badge.fury.io/rb/alembic-jekyll-theme.svg)](https://badge.fury.io/rb/alembic-jekyll-theme)
+# Jalpc. [![Analytics](https://ga-beacon.appspot.com/UA-73784599-1/welcome-page)](https://github.com/jarrekk/Jalpc)
 
-⚗ A Jekyll boilerplate theme designed to be a starting point for any Jekyll website.
+[![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
+[![stable](http://badges.github.io/stability-badges/dist/stable.svg)](http://github.com/badges/stability-badges)
+[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/ellerbrock/open-source-badge/)
 
-![Screenshot](https://raw.githubusercontent.com/daviddarnes/alembic/master/screenshot.png)
+<https://jarrekk.github.io/Jalpc/>
 
-[Tweet it](https://twitter.com/intent/tweet/?url=https://alembic.darn.es&text=Alembic%20-%20A%20Jekyll%20boilerplate%20theme&via=DavidDarnes) | [Tip me $5 💸](https://www.paypal.me/daviddarnes/5usd)
+<http://www.jarrekk.com>  -- Personal website
 
-## Contents
-- [About](#about)
+![Blog](https://github.com/jarrekk/Jalpc/raw/master/readme_files/Jalpc.png)
+
+- [3 steps to setup this theme at your website!](#3-steps-to-setup-this-theme-at-your-website)
 - [Features](#features)
-- [Examples](#examples)
-- [Installation](#installation)
-- [Customising](#customising)
-- [Configuration](#configuration)
-  - [Gem dependency settings](#gem-dependency-settings)
-  - [Site settings](#site-settings)
-  - [Site navigation](#site-navigation)
-- [Using includes](#using-includes)
-- [Page layouts](#page-layouts)
-- [Page and Post options](#page-and-post-options)
-- [Credits](#credits)
+  - [Index page](#index-page)
+    - [`_data/*.yml`](#_datayml)
+  - [Chart Skills](#chart-skills)
+  - [Categories in blog page](#categories-in-blog-page)
+  - [Pagination](#pagination)
+  - [Page views counter](#page-views-counter)
+  - [Multilingual Page](#multilingual-page)
+  - [Web analytics](#web-analytics)
+  - [Comment](#comment)
+  - [Share](#share)
+  - [Search engines](#search-engines)
+  - [Compress CSS and JS files](#compress-css-and-js-files)
+- [Put in a Jalpc Plug](#put-in-a-jalpc-plug)
+- [Upgrading Jalpc](#upgrading-jalpc)
+  - [Ensure there's an upstream remote](#ensure-theres-an-upstream-remote)
+  - [Pull in the latest changes](#pull-in-the-latest-changes)
+- [Todo](#todo)
+- [Donate Jalpc](#donate-jalpc)
+- [Wiki](#wiki)
+- [Ad](#ad)
 
-## About
+This is a simple, beautiful and swift theme for Jekyll. It's mobile first, fluidly responsive, and delightfully lightweight.
 
-**Alembic is a starting point for [Jekyll](https://jekyllrb.com/) projects. Rather than starting from scratch, this boilerplate theme is designed to get the ball rolling immediately. Install it, configure it, tweak it, push it.**
+If you're completely new to Jekyll, I recommend checking out the documentation at <http://jekyllrb.com> or there's a tutorial by Smashing Magazine.
 
-## Features
+# 3 steps to setup this theme at your website!
 
-- Available as a **theme gem** and **GitHub Pages** theme
-- Simple and elegant design that can be used out of the box or as solid starting point
-- Tested in all major browsers, including **IE and Edge**
-- **Configurable colours** and typography in a single settings file
-- Extensive set of **shortcodes** to include various elements; such as buttons, icons, figure images and more
-- Solid **typographic framework** from [Sassline](https://sassline.com/)
-- Configurable navigation via a single file
-- Modular Jekyll components
-- Post category support in the form of a single post index page grouped by category
-- Built in live search using JavaScript
-- **Contact form** built in using [Formspree](https://formspree.io/)
-- Designed with **[Siteleaf](http://www.siteleaf.com/)** in mind
-- Has 9 of the most popular networks as performant sharing buttons
-- Has documentation
+Here is a [document](https://jarrekk.github.io/Jalpc/html/2017/01/31/3-steps-to-setup-website-with-Jalpc.html) of how to setup this theme with 3 steps and a [wiki](https://github.com/jarrekk/Jalpc/wiki/How-to-add-posts) of how to add posts. If you have any **questions** please ask me at [GitHub Issues](https://github.com/jarrekk/Jalpc/issues).
 
-## Examples
+# Features
 
-Here are a few examples of Alembic out in the wild being used in a variety of ways:
+## Index page
 
-- [bitpodcast.com](https://bitpodcast.com/)
-- [joelcagedesign.com](https://joelcagedesign.com/)
-- [bawejakunal.github.io](https://bawejakunal.github.io/)
-- [case2111.github.io](http://case2111.github.io/)
-- [www.10people.co.uk](http://www.10people.co.uk/)
-- [hrkeni.me](http://hrkeni.me/)
-- [venuthatikonda.github.io](https://venuthatikonda.github.io/)
-- [ccs17.bsc.es](https://ccs17.bsc.es/)
-- [karateca.org](http://www.karateca.org/)
-- [p-recs.github.io](https://p-recs.github.io/2018/)
+The index page is seprated into several sections and they are located in `_includes/sections`,the configuration is in `_data/landing.yml` and section's detail configuration is in `_data/*.yml`.
 
-## Installation
+### `_data/*.yml`
 
-### As a Jekyll theme
+These files are used to dynamically render pages, so you almost don't have to edit *html files* to change your own theme, besides you can use `jekyll serve --watch` to reload changes.
 
-1. Add `gem "alembic-jekyll-theme"` to your `Gemfile` to add the theme as a dependancy
-2. Run the command `bundle install` in the root of project to install the theme and its dependancies
-3. Add `theme: alembic-jekyll-theme` to your `_config.yml` file to set the site theme
-4. Run `bundle exec jekyll serve` to build and serve your site
-5. Done! Use the [configuration](#configuration) documentation and the example [`_config.yml`](https://github.com/daviddarnes/alembic/blob/master/_config.yml) file to set things like the navigation, contact form and social sharing buttons
+The following is mapping between *yml files* to *sections*.
 
-### As a GitHub Pages remote theme
+* landing.yml ==> index.html
+* index/language.yml ==> index.html
+* index/careers.yml  ==>  _includes/sections/career.html
+* index/skills.yml  ==>  _includes/sections/skills.html
+* index/projects.yml  ==>  _includes/sections/projects.html
+* index/links.yml  ==>  _includes/sections/links.html
 
-1. Add `gem "jekyll-remote-theme"` to your `Gemfile` to add the theme as a dependancy
-2. Run the command `bundle install` in the root of project to install the jekyll remote theme gem as a dependancy
-3. Add `jekyll-remote-theme` to the list of `plugins` in your `_config.yml` file
-4. Add `remote_theme: daviddarnes/alembic` to your `_config.yml` file to set the site theme
-5. Run `bundle exec jekyll serve` to build and serve your site
-6. Done! Use the [configuration](#configuration) documentation and the example [`_config.yml`](https://github.com/daviddarnes/alembic/blob/master/_config.yml) file to set things like the navigation, contact form and social sharing buttons
+This *yml file* is about blog page navbar
 
-### As a Boilerplate / Fork
+* blog.yml ==> _includes/header.html
 
-_(deprecated, not recommended)_
+The following is mapping between *yml files* to *donation*
 
-1. [Fork the repo](https://github.com/daviddarnes/alembic#fork-destination-box)
-2. Replace the `Gemfile` with one stating all the gems used in your project
-3. Delete the following unnecessary files/folders: `CODE_OF_CONDUCT.md`, `CONTRIBUTING.md`, `LICENSE`, `screenshot.png`, `CNAME` and `alembic-jekyll-theme.gemspec`
-4. Run the command `bundle install` in the root of project to install the jekyll remote theme gem as a dependancy
-5. Run `bundle exec jekyll serve` to build and serve your site
-6. Done! Use the [configuration](#configuration) documentation and the example [`_config.yml`](https://github.com/daviddarnes/alembic/blob/master/_config.yml) file to set things like the navigation, contact form and social sharing buttons
+* donation/donationlist.yml ==> blog/donate.html
+* donation/alipay.yml  ==>  blog/donate.html
+* donation/wechat_pay.yml ==> blog/donate.yml
 
-## Customising
+## Chart Skills
 
-When using Alembic as a theme means you can take advantage of the file overriding method. This allows you to overwrite any file in this theme with your own custom file, simply by matching the file name and path. The most common example of this would be if you want to add your own styles or change the core style settings.
+I use [Chart.js](http://www.chartjs.org/) to show skills, the type of skills' chart is radar, if you want to custom, please read document of Chart.js and edit **_includes/sections/skills.html** and **_data/index/skills.yml**.
 
-To add your own styles copy the [`styles.scss`](https://github.com/daviddarnes/alembic/blob/master/assets/styles.scss) into your own project with the same file path (`assets/styles.scss`). From there you can add your own styles, you can even optionally ignore the theme styles by removing the `@import "alembic";` line.
+## Categories in blog page
 
-If you're just looking to set your own colours and fonts copy the [`_settings.scss`](https://github.com/daviddarnes/alembic/blob/master/_sass/_settings.scss) file into your project at the same file path (`_sass/_settings.scss`) and change variables however you wish. The settings are a mixture of custom variables and settings from [Sassline](https://medium.com/@jakegiltsoff/sassline-v2-0-e424b2881e7e) - follow the link to find out how to configure the typographic settings.
+In blog page, we categorize posts into several categories by url, all category pages use same template html file - `_includes/category.html`.
 
-## Configuration
+For example: URL is `http://127.0.0.1:4000/python/`. In `_data/blog.yml`, we define this category named `Python`, so in `_includes/category.html` we get this URL(/python/) and change it to my category(Python), then this page are posts about **Python**. The following code is about how to get url and display corresponding posts in  `_includes/category.html`.
 
-There are a number of optional settings for you to configure. Use the example [`_config.yml`](https://github.com/daviddarnes/alembic/blob/master/_config.yml) file in the repo and use the documentation below to configure your site:
-
-### Gem dependency settings
-
-`twitter`, `author` and `social` values will need to be changed to the projects' social information or removed. Look for the `Gem settings` comment within the `/_config.yml` file. These values are for the [jekyll-seo-tag](https://github.com/jekyll/jekyll-seo-tag) - follow the link to find out more.
-
-### Site settings
-
-You'll need to change the `description`, `title` and `url` to match with the project. You'll also need to replace the `/assets/logo.svg` and `/assets/default-social-image.png` with the project logo and default social image. Setting the site language can be done with `lang`, the theme will default to `en-US`. The `email` needs to be changed to the email you want to receive contact form enquires with. The `disqus` value can be changed to your project username on [Disqus](https://disqus.com), remove this from the `/_config.yml` file if you don't want comments enabled. Look for the `Site settings` comment within the `/_config.yml` file. The `repo` setting is optional, for now, and can be removed entirely, if you wish.
-
-### Site navigation
-
-There are a total of 4 different navigation types:
-
-- `navigation_header`: The links shown in the header (it is also used on the 404 page)
-- `navigation_footer`: The links shown in the footer
-- `social_links`: The social icon links that are shown in the sidebar
-- `sharing_links`: The social sharing buttons that are shown at the bottom of blog posts
-
-All navigations can be edited using the `_config.yml` file. To see example usage either look for the `Site navigation` comment within the `/_config.yml` file or see [the nav-share.html include](#nav-sharehtml).
-
-If there are no items for the `navigation_header` or `navigation_footer`, they will fallback to a list of pages within the site. The `social_navigation` properties should either be one that is already in the list (so `Twitter` or `Facebook`) or simply `link`, this is so an icon can be set for the link.
-
-## Using includes
-
-There are 2 main types of includes: ones designed for the site and ones that are designed as shortcodes. Here are a list of the shortcode includes:
-
-### `button.html`
-A button that can link to a page of any kind.
-
-Example usage: `{% include button.html text="I'm a button" link="https://david.darn.es" %}`
-
-Available options:
-- `text`: The text of the button _required_
-- `link`: The link that the button goes to _required_
-- `icon`: The icon that is added to the end of the button text
-- `color`: The colour of the button
-
-### `figure.html`
-An image with optional caption.
-
-Example usage: `{% include figure.html image="/uploads/feature-image.jpg" caption="Check out my photo" %}`
-
-Available options:
-- `image`: The image shown _required_
-- `caption`: A caption to explain the image
-- `position`: The position of the image, `left` or `right`
-
-### `icon.html`
-An icon.
-
-Example usage: `{% include icon.html id="twitter" %}`
-
-Available options:
-- `id`: The reference for the icon _required_
-- `title`: The accessible label for the icon
-- `color`: The desired colour of the icon
-
-### `nav-share.html`
-A set of buttons that share the current page to various social networks, which is controlled within the `_config.yml` file under the `sharing_links` keyword.
-
-Example usage: `{% include nav-share.html %}`
-
-Available options:
-``` yml
-Twitter: "#1DA1F2"
-facebook: "#3B5998"
-Google+: "#DC4E41"
-Pinterest: "#BD081C"
-LinkedIn: "#0077B5"
-tumblr: "#36465D"
-Reddit: "#FF4500"
-Hacker News: "#ff6600"
-Designer News: "#2D72D9"
-Email: ""
+```html
+<div class="row">
+    <div class="col-lg-12 text-center">
+        <div class="navy-line"></div>
+        {% assign category = page.url | remove:'/' | capitalize %}
+        {% if category == 'Html' %}
+        {% assign category = category | upcase %}
+        {% endif %}
+        <h1>{{ category }}</h1>
+    </div>
+</div>
+<div class="wrapper wrapper-content  animated fadeInRight blog">
+    <div class="row">
+        <ul id="pag-itemContainer" style="list-style:none;">
+            {% assign counter = 0 %}
+            {% for post in site.categories[category] %}
+            {% assign counter = counter | plus: 1 %}
+            <li>
 ```
 
-_The first item is the name of the network (must be one of the ones stated above) and the second is the colour of the button. To remove a button just remove the line of the same name._
+## Pagination
 
-### `video.html`
-A YouTube video.
+The pagination in jekyll is not very perfect,so I use front-end web method,there is a [blog](http://www.jarrekk.com/html/2016/06/04/jekyll-pagination-with-jpages.html) about the method and you can refer to [jPages](http://luis-almeida.github.io/jPages).
 
-Example usage: `{% include video.html id="zrkcGL5H3MU" %}`
+## Page views counter
 
-Available options:
-- `id`: The YouTube ID for the video _required_
+Many third party page counter platforms are too slow,so I count my website page view myself,the javascript file is [static/js/count.min.js](https://github.com/jarrekk/jalpc_jekyll_theme/blob/gh-pages/static/js/count.min.js) ([static/js/count.js](https://github.com/jarrekk/jalpc_jekyll_theme/blob/gh-pages/static/js/count.js)),the backend API is written with flask on [Vultr VPS](https://www.vultr.com/), detail code please see [ztool-backhend-mongo](https://github.com/Z-Tool/ztool-backhend-mongo).
 
-### `map.html`
-A Google map. _See Google [My Maps](https://www.google.com/mymaps)_
+## Multilingual Page
 
-Example usage: `{% include map.html id="1UT-2Z-Vg_MG_TrS5X2p8SthsJhc" %}`
+The landing page has multilingual support with the [i18next](http://i18next.com) plugin.
 
-Available options:
-- `id`: The map ID for the video _required_
+Languages are configured in the `_data/index/language.yml` file.
 
-### `site-form.html`
-Adds a contact form to the page.
+> Not everyone needs this feature, so I make it very easy to remove it, just clear content in file `_data/language.yml` and folder `static/locales/`.
 
-Example usage: `{% include site-form.html %}`
+About how to custom multilingual page, please see [wiki](https://github.com/jarrekk/Jalpc/wiki/Multilingual-Page).
 
-This include has no options. Use the `email` option in the `/_config.yml` to change to the desired email.
+## Web analytics
 
-### `site-search.html`
-Adds a search form to the page.
+I use [Google analytics](https://www.google.com/analytics/) and [GrowingIO](https://www.growingio.com/) to do web analytics, you can choose either to realize it,just register a account and replace id in `_config.yml`.
 
-Example usage: `{% include site-search.html %}`
+## Comment
 
-This include has no options. This include will add a block of javascript to the page and javascript reference in order for the search field to work correctly.
+I use [Disqus](https://disqus.com/) to realize comment. You should set disqus_shortname and get public key and then, in `_config.yml`, edit the disqus value to enable Disqus.
 
-## Page layouts
+## Share
 
-As well as `page`, `post`, `blog`, there are a few alternative layouts that can be used on pages:
+I use [AddToAny](https://www.addtoany.com/) to share my blog on other social network platform. You can go to this website to custom your share buttons and paste code at `_includes/share.html`.
 
-- `categories`: Shows all posts grouped by category, with an index of categories in a left hand sidebar
-- `search`: Adds a search field to the page as well as a simplified version of the sidebar to allow more focus on the search results
+![share](https://github.com/jarrekk/Jalpc/raw/master/readme_files/share.png)
 
-## Page and Post options
+## Search engines
 
-There are some more specific options you can apply when creating a page or a post:
+I use javascript to realize blog search,you can double click `Ctrl` or click the icon at lower right corner of the page,the detail you can got to this [repository](https://github.com/androiddevelop/jekyll-search). Just use it.
 
-- `aside: true`: Adds a sidebar to the page or post, this is false by default and will not appear
-- `comments: false`: Turns off comments for that post
-- `feature_image: "/uploads/feature-image.jpg"`: Adds a full width feature image at the top of the page
-- `feature_text: "Example text"`: Adds text to the top of the page as a full width feature with solid colour; supports markdown. This can be used in conjunction with the `feature_image` option to create a feature image with text over it
-- `indexing: false`: Adds a `noindex` meta element to the `<head>` to stop crawler bots from indexing the page, used on the 404 page
+![search](https://github.com/jarrekk/Jalpc/raw/master/readme_files/search.gif)
 
-> **Note:** The Post List Page options are actually in the collection data within the `_config.yml` file.
+## Compress CSS and JS files
 
-## Credits
+All CSS and JS files are compressed at `/static/assets`.
 
-- Thanks to [Simple Icons](https://simpleicons.org/) for providing the brand icons, by [Dan Leech](https://twitter.com/bathtype)
-- Thanks to [Sassline](https://sassline.com/) for the typographic basis, by [Jake Giltsoff](https://twitter.com/jakegiltsoff)
-- Thanks to [Flexbox mixin](https://github.com/mastastealth/sass-flex-mixin) by [Brian Franco](https://twitter.com/brianfranco)
-- Thanks to [Normalize](https://necolas.github.io/normalize.css/) by [Nicolas Gallagher](https://twitter.com/necolas) and [Jonathan Neal](https://twitter.com/jon_neal).
-- Thanks to [pygments-css](http://richleland.github.io/pygments-css/) for the autumn syntax highlighting, by [Rich Leland](https://twitter.com/richleland)
+I use [UglifyJS2](https://github.com/mishoo/UglifyJS2), [clean-css](https://github.com/jakubpawlowicz/clean-css) to compress CSS and JS files, customised CSS files are at `_sass` folder which is feature of [Jekyll](https://jekyllrb.com/docs/assets/). If you want to custom CSS and JS files, you need to do the following:
+
+1. Install [NPM](https://github.com/npm/npm) then install **UglifyJS2** and **clean-css**: `npm install -g uglifyjs; npm install -g clean-css`, then run `npm install` at root dir of project.
+2. Compress script is **build.js**
+3. If you want to add or remove CSS/JS files, just edit **build/build.js** and **build/files.conf.js**, then run `npm run build` at root dir of project, link/src files will use new files.
+
+OR
+
+Edit CSS files at `_sass` folder.
+
+# Put in a Jalpc Plug
+
+If you want to give credit to the Jalpc theme with a link to my personal website <http://www.jarrekk.com>, that'd be awesome. No worries if you don't.
+
+# Upgrading Jalpc
+
+Jalpc is always being improved by its users, so sometimes one may need to upgrade.
+
+## Ensure there's an upstream remote
+
+If `git remote -v` doesn't have an upstream listed, you can do the following to add it:
+
+```
+git remote add upstream https://github.com/jarrekk/Jalpc.git
+```
+
+## Pull in the latest changes
+
+```
+git pull upstream gh-pages
+```
+
+There may be merge conflicts, so be sure to fix the files that git lists if they occur. That's it!
+
+# Todo
+- [ ] `jekyll server --watch` mode need to use original CSS/JS files
+- [ ] User can customise index page's section title.
+- [x] Non-github projects also have links.
+- [ ] Add some custom color themes for selection(Nav bar, background, words, dominant hue).
+
+# Donate Jalpc
+If this project let you enjoy your blog time, you can give me a cup of coffee :)
+
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://paypal.me/jarrekk)
+
+# Wiki
+
+* [Multilingual Page](https://github.com/jarrekk/Jalpc/wiki/Multilingual-Page)
+* [How to add posts](https://github.com/jarrekk/Jalpc/wiki/How-to-add-posts)
+* [Change Log](https://github.com/jarrekk/Jalpc/wiki/Change-Log)
+* [Contributors](https://github.com/jarrekk/Jalpc/wiki/Contributors)
+* [Thanks to the following](https://github.com/jarrekk/Jalpc/wiki/Thanks-to-the-following)
+
+# Ad
+[Jalpc-A](https://github.com/Jack614/Jalpc-A): another Jekyll theme written by [AngularJS](https://angularjs.org/).
+
